@@ -1,0 +1,11 @@
+.Post {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  display: flex;
+  border: 2px solid #364968;
+  border-radius: 5px;
+  min-height: 60px;
+  max-height: 240px;
+  overflow: hidden;
+}
