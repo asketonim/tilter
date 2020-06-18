@@ -1,7 +1,7 @@
 import React from 'react';
 
 const styleText = {
-  margin: '8px 16px',
+  margin: '8px 0',
   fontFamily: 'Calibri',
   lineHeight: '1.2'
 };
