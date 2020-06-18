@@ -7,12 +7,23 @@
   border: 2px solid #364968;
   border-radius: 5px;
   min-height: 60px;
-  max-height: 240px;
-  overflow: hidden;
+  /* max-height: 240px; */
+  /* overflow: hidden; */
 }
 
 .Content {
   display: flex;
   flex-direction: row;
   height: 240px;
+}
+
+.ContentField {
+  display: flex;
+  flex-direction: column;
+}
+
+.Controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
