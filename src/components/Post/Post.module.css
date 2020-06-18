@@ -11,7 +11,8 @@
   overflow: hidden;
 }
 
-.Row {
+.Content {
   display: flex;
   flex-direction: row;
+  height: 240px;
 }
