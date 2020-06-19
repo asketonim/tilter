@@ -15,14 +15,14 @@ const Post = () => (
       <div className={classes.ContentField}>
         <Info />
         <Text />
-      </div>
-    </div>
-    <div className={classes.Controls}>
-      <div>
-        Likes
-      </div>
-      <div>
-        Edit
+        <div className={classes.Controls}>
+          <div>
+            Likes
+          </div>
+          <div>
+            Edit
+          </div>
+        </div>
       </div>
     </div>
   </article>
