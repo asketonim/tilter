@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Info = () => (
+const Info = ({ author, time }) => (
   <div>
-    Anton @asketonim Jun 19
+    {`${author.name} @${author.username} ${time}`}
   </div>
 );
 
