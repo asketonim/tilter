@@ -21,6 +21,7 @@
         "react/jsx-filename-extension": "off",
         "comma-dangle": "off",
         "semi": "error",
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "react/require-default-props": "off"
     }
 }

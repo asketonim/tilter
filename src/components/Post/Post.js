@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
@@ -38,5 +40,16 @@ const Post = ({ post }) => (
     </div>
   </article>
 );
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    author: PropTypes.shape({
+      name: PropTypes.string,
+      username: PropTypes.string
+    }),
+    content: PropTypes.string,
+    time: PropTypes.string
+  })
+};
 
 export default Post;
