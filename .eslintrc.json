@@ -20,6 +20,8 @@
     "rules": {
         "react/jsx-filename-extension": "off",
         "comma-dangle": "off",
-        "semi": "error"
+        "semi": "error",
+        "linebreak-style": "off",
+        "react/require-default-props": "off"
     }
 }

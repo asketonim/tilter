@@ -1,0 +1,37 @@
+.Post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 6px 0;
+  padding: 20px 16px;
+  border: 2px solid #364968;
+  border-radius: 5px;
+  min-height: 60px;
+  /* max-height: 240px; */
+  /* overflow: hidden; */
+}
+
+.Content {
+  display: flex;
+  flex-direction: row;
+  /* height: 240px; */
+}
+
+.ContentField {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.Controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 4px;
+}
+
+.IconHolder {
+  width: 24px;
+  height: 24px;
+}
