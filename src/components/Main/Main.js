@@ -13,9 +13,9 @@ const Main = ({ user }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    get('/notes.json')
+    get('/posts.json')
       .then((response) => {
-        setPosts(Object.values(response.data));
+        setPosts(response.data ? Object.values(response.data) : []);
       });
   }, []);
 

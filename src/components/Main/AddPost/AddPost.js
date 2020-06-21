@@ -16,12 +16,11 @@ const AddPost = ({ user, posts, setPosts }) => {
         username: user.username || 'guest'
       },
       content: newPost,
-      time: new Date()
+      time: (new Date()).getTime()
     };
 
-    post('/notes.json', postToPost)
-      .then((response) => {
-        console.log(response.data);
+    post('/posts.json', postToPost)
+      .then(() => {
         setPosts([...posts, postToPost]);
       });
   };
@@ -53,7 +52,7 @@ AddPost.propTypes = {
       username: PropTypes.string
     }),
     content: PropTypes.string,
-    time: PropTypes.string || PropTypes.instanceOf(Date)
+    time: PropTypes.number
   })),
   setPosts: PropTypes.func
 };

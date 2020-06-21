@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://notez-ebbe2.firebaseio.com';
+const baseUrl = 'https://tilter-fe20f.firebaseio.com';
 
 export const get = (url) => axios.get(baseUrl + url);
 
