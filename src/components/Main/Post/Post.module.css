@@ -23,19 +23,3 @@
   margin-left: 16px;
   width: 100%;
 }
-
-.Controls {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
-
-  margin-top: 8px;
-  padding: 0 4px;
-  width: 100%;
-}
-
-.IconHolder {
-  width: 24px;
-  height: 24px;
-  margin: 0 64px 0 0;
-}

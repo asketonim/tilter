@@ -2,13 +2,10 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
-import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
-
 import ProfilePhoto from './ProfilePhoto/ProfilePhoto';
 import Info from './Info/Info';
 import Text from './Text/Text';
+import Controls from './Controls/Controls';
 
 
 import classes from './Post.module.css';
@@ -24,18 +21,10 @@ const Post = ({ post }) => (
           author={post.author}
           time={post.time}
         />
-        <Text text={post.content} />
-        <div className={classes.Controls}>
-          <div className={classes.IconHolder}>
-            <FavoriteBorderIcon color="action" />
-          </div>
-          <div className={classes.IconHolder}>
-            <ChatBubbleOutlineRoundedIcon color="action" />
-          </div>
-          <div className={classes.IconHolder}>
-            <BookmarkBorderIcon color="action" />
-          </div>
-        </div>
+        <Text
+          text={post.content}
+        />
+        <Controls />
       </div>
     </div>
   </article>
