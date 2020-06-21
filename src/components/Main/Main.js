@@ -28,7 +28,11 @@ const Main = ({ user }) => {
 
   return (
     <main className={classes.Main}>
-      <AddPost user={user} />
+      <AddPost
+        user={user}
+        posts={posts}
+        setPosts={setPosts}
+      />
       { postsToRender }
     </main>
   );

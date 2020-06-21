@@ -10,8 +10,8 @@ const Info = ({ author, time }) => (
 
 Info.propTypes = {
   author: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired
+    name: PropTypes.string,
+    username: PropTypes.string
   }),
   time: PropTypes.string.isRequired
 };
