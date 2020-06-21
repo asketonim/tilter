@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { get } from '../../requests';
 
-import Post from '../Post/Post';
+import AddPost from './AddPost/AddPost';
+import Post from './Post/Post';
 
 import classes from './Main.module.css';
 
@@ -26,6 +27,7 @@ const Main = () => {
 
   return (
     <main className={classes.Main}>
+      <AddPost />
       { postsToRender }
     </main>
   );
