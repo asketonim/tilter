@@ -13,7 +13,7 @@ Info.propTypes = {
     name: PropTypes.string,
     username: PropTypes.string
   }),
-  time: PropTypes.string.isRequired
+  time: PropTypes.string || PropTypes.instanceOf(Date)
 };
 
 export default Info;

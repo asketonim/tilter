@@ -53,7 +53,7 @@ AddPost.propTypes = {
       username: PropTypes.string
     }),
     content: PropTypes.string,
-    time: PropTypes.string
+    time: PropTypes.string || PropTypes.instanceOf(Date)
   })),
   setPosts: PropTypes.func
 };

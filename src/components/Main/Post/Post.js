@@ -48,7 +48,7 @@ Post.propTypes = {
       username: PropTypes.string
     }),
     content: PropTypes.string,
-    time: PropTypes.string
+    time: PropTypes.string || PropTypes.instanceOf(Date)
   })
 };
 
