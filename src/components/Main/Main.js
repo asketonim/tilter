@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
+import PropTypes from 'prop-types';
+
 import { get } from '../../requests';
 
-import Post from '../Post/Post';
+import AddPost from './AddPost/AddPost';
+import Post from './Post/Post';
 
 import classes from './Main.module.css';
 
-const Main = () => {
+const Main = ({ user }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    get('/notes.json')
+    get('/posts.json')
       .then((response) => {
-        setPosts(Object.values(response.data));
+        setPosts(response.data ? Object.values(response.data) : []);
       });
-    // return notes;
   }, []);
 
   const postsToRender = posts.map((post) => (
@@ -26,9 +28,21 @@ const Main = () => {
 
   return (
     <main className={classes.Main}>
+      <AddPost
+        user={user}
+        posts={posts}
+        setPosts={setPosts}
+      />
       { postsToRender }
     </main>
   );
+};
+
+Main.propTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string,
+    username: PropTypes.string
+  })
 };
 
 export default Main;
