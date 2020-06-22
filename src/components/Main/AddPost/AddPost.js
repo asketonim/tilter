@@ -20,7 +20,6 @@ const AddPost = ({ user, posts, setPosts }) => {
     textarea[i].addEventListener('input', onInput, false);
   }
 
-
   const handleClick = () => {
     const postToPost = {
       author: {
@@ -42,16 +41,19 @@ const AddPost = ({ user, posts, setPosts }) => {
     <div className={classes.AddPost}>
       <textarea
         className={classes.AddPostTextarea}
-        placeholder={`TextField for ${user.name ? `${user.name} aka ` : 'you, '} ${user.username}!`}
+        placeholder="What's new?"
         value={newPost}
         onChange={(e) => setNewPost(e.target.value)}
       />
-      <button
-        type="button"
-        onClick={handleClick}
-      >
-        Post
-      </button>
+      <div className={classes.SubmitButtonHolder}>
+        <button
+          className={classes.SubmitButton}
+          type="button"
+          onClick={handleClick}
+        >
+          Post
+        </button>
+      </div>
     </div>
   );
 };
