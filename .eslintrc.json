@@ -22,6 +22,8 @@
         "comma-dangle": "off",
         "semi": "error",
         "linebreak-style": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "no-plusplus": "off",
+        "react/no-this-in-sfc": "off"
     }
 }

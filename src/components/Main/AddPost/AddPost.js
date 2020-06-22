@@ -9,6 +9,18 @@ import classes from './AddPost.module.css';
 const AddPost = ({ user, posts, setPosts }) => {
   const [newPost, setNewPost] = useState('');
 
+  const textarea = document.getElementsByTagName('textarea');
+  function onInput() {
+    this.style.height = 'auto';
+    this.style.height = `${this.scrollHeight} px`;
+  }
+
+  for (let i = 0; i < textarea.length; i++) {
+    textarea[i].setAttribute('style', `height:  ${textarea[i].scrollHeight}px;overflow-y:hidden;`);
+    textarea[i].addEventListener('input', onInput, false);
+  }
+
+
   const handleClick = () => {
     const postToPost = {
       author: {
@@ -29,6 +41,7 @@ const AddPost = ({ user, posts, setPosts }) => {
   return (
     <div className={classes.AddPost}>
       <textarea
+        className={classes.AddPostTextarea}
         placeholder={`TextField for ${user.name ? `${user.name} aka ` : 'you, '} ${user.username}!`}
         value={newPost}
         onChange={(e) => setNewPost(e.target.value)}
