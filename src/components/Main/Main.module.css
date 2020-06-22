@@ -5,3 +5,15 @@
   width: 35%;
   margin: 88px auto 6px auto;
 }
+
+@media screen and (max-width: 999px) {
+  .Main {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .Main {
+    width: 70%;
+  }
+}
