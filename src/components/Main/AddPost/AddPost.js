@@ -22,6 +22,7 @@ const AddPost = ({ user, posts, setPosts }) => {
     post('/posts.json', postToPost)
       .then(() => {
         setPosts([...posts, postToPost]);
+        setNewPost('');
       });
   };
 
@@ -29,6 +30,7 @@ const AddPost = ({ user, posts, setPosts }) => {
     <div className={classes.AddPost}>
       <textarea
         placeholder={`TextField for ${user.name ? `${user.name} aka ` : 'you, '} ${user.username}!`}
+        value={newPost}
         onChange={(e) => setNewPost(e.target.value)}
       />
       <button
