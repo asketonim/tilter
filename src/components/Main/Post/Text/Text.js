@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 const styleText = {
   margin: '8px 0',
   fontFamily: 'Calibri',
-  lineHeight: '1.2'
+  lineHeight: '1.2',
+  wordBreak: 'break-all',
+  wordWrap: 'break-word'
 };
 
 const Text = ({ text }) => (
   <div style={styleText}>
-    <p>{text}</p>
+    {text}
   </div>
 );
 
