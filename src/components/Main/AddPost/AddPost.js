@@ -27,7 +27,8 @@ const AddPost = ({ user, posts, setPosts }) => {
         username: user.username || 'guest'
       },
       content: newPost,
-      time: (new Date()).getTime()
+      time: (new Date()).getTime(),
+      id: Math.round((new Date()).getTime() * Math.random())
     };
 
     post('/posts.json', postToPost)
