@@ -1,0 +1,28 @@
+.AuthPage {
+  width: 30%;
+  height: 240px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+
+}
+
+.Label {
+  width: 100%;
+}
+
+.ButtonHolder {
+  display: flex;
+  width: 100%;
+  float: none;
+  justify-content: space-evenly;
+  margin: auto 0;
+}
+
+.btn {
+  background-color: inherit;
+  width: 30%;
+  height: 32px;
+  margin: 0 24px;
+}

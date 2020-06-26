@@ -3,9 +3,10 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import BookmarksPage from './pages/BookmarksPage';
-import AuthPage from './pages/AuthPage';
+import AuthPage from './pages/AuthPage/AuthPage';
 
 const useRoutes = (isAuthenticated) => {
+  console.log(isAuthenticated);
   if (isAuthenticated) {
     return (
       <Switch>
