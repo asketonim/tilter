@@ -24,6 +24,8 @@
         "linebreak-style": "off",
         "react/require-default-props": "off",
         "no-plusplus": "off",
-        "react/no-this-in-sfc": "off"
+        "react/no-this-in-sfc": "off",
+        "import/extensions": "off",
+        "no-empty": "off"
     }
 }
