@@ -4,12 +4,24 @@
   margin: 0 auto;
   border: 1px solid #000;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
 
 }
 
 .Label {
   width: 100%;
+  text-align: center;
+}
+
+.FormHolder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.Form {
 }
 
 .ButtonHolder {
@@ -17,7 +29,6 @@
   width: 100%;
   float: none;
   justify-content: space-evenly;
-  margin: auto 0;
 }
 
 .btn {
