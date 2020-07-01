@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHttp } from '../../hooks/http.hook.js';
 
 import classes from './AuthPage.module.css';
@@ -8,7 +8,8 @@ const AuthPage = () => {
   const {
     loading,
     error,
-    request
+    request,
+    clearError
   } = useHttp();
 
   const [form, setForm] = useState({
@@ -16,16 +17,23 @@ const AuthPage = () => {
     password: ''
   });
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const formChangeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 
   const registerHandler = async () => {
     try {
-      const data = await request('/api/auth/register', 'POST', { ...form });
-      console.log('Data', data);
+      clearError();
+      await request('/api/auth/register', 'POST', { ...form });
     } catch (e) {}
   };
+
+  useEffect(() => {
+    setErrorMessage(error);
+  }, [error, clearError]);
+
 
   return (
     <div className={classes.AuthPage}>
@@ -66,6 +74,8 @@ const AuthPage = () => {
               />
             </label>
           </div>
+
+          { errorMessage }
 
         </div>
         <div className={classes.ButtonHolder}>

@@ -6,7 +6,6 @@ import BookmarksPage from './pages/BookmarksPage';
 import AuthPage from './pages/AuthPage/AuthPage';
 
 const useRoutes = (isAuthenticated) => {
-  console.log(isAuthenticated);
   if (isAuthenticated) {
     return (
       <Switch>
