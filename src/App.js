@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import { BrowserRouter as Router } from 'react-router-dom';
+import useRoutes from './routes';
 
 function App() {
-  const [user, setUser] = useState({});
-
-  useEffect(() => setUser({
-    name: 'Anton',
-    username: 'asketonim'
-  }), []);
+  const routes = useRoutes(false);
 
   return (
     <div>
-      <Header user={user} />
-      <Main user={user} />
+      <Router>
+        {routes}
+      </Router>
     </div>
   );
 }
