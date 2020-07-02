@@ -21,12 +21,18 @@ const AuthPage = () => {
 
   const formChangeHandler = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
+    clearError();
   };
 
   const registerHandler = async () => {
     try {
-      clearError();
       await request('/api/auth/register', 'POST', { ...form });
+    } catch (e) {}
+  };
+
+  const loginHandler = async () => {
+    try {
+      await request('/api/auth/login', 'POST', { ...form });
     } catch (e) {}
   };
 
@@ -79,7 +85,12 @@ const AuthPage = () => {
 
         </div>
         <div className={classes.ButtonHolder}>
-          <button className={classes.btn} type="button">
+          <button
+            className={classes.btn}
+            type="button"
+            onClick={loginHandler}
+            disabled={loading}
+          >
             Sign in
           </button>
           <button
