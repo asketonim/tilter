@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHttp } from '../../hooks/http.hook.js';
+import AuthContext from '../../context/AuthContext';
 
 import classes from './AuthPage.module.css';
 
@@ -11,6 +12,8 @@ const AuthPage = () => {
     request,
     clearError
   } = useHttp();
+
+  const auth = useContext(AuthContext);
 
   const [form, setForm] = useState({
     username: '',
@@ -32,7 +35,8 @@ const AuthPage = () => {
 
   const loginHandler = async () => {
     try {
-      await request('/api/auth/login', 'POST', { ...form });
+      const data = await request('/api/auth/login', 'POST', { ...form });
+      auth.login(data.token, data.userId);
     } catch (e) {}
   };
 

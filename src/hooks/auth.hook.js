@@ -11,8 +11,8 @@ const useAuth = () => {
     setUserId(id);
 
     localStorage.setItem(storageName, JSON.stringify({
-      userId,
-      token
+      userId: id,
+      token: jwtToken
     }));
   }, []);
 
