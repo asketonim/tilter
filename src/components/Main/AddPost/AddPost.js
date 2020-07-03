@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import PropTypes from 'prop-types';
 
 import { post } from '../../../requests';
 
 import classes from './AddPost.module.css';
+import AuthContext from '../../../context/AuthContext';
 
-const AddPost = ({ user, posts, setPosts }) => {
+const AddPost = ({ posts, setPosts }) => {
+  const auth = useContext(AuthContext);
   const [newPost, setNewPost] = useState('');
 
   const textarea = document.getElementsByTagName('textarea');
@@ -22,10 +24,7 @@ const AddPost = ({ user, posts, setPosts }) => {
 
   const handleClick = () => {
     const postToPost = {
-      author: {
-        name: user.name || 'noname',
-        username: user.username || 'guest'
-      },
+      username: auth.username,
       content: newPost,
       time: (new Date()).getTime(),
       id: Math.round((new Date()).getTime() * Math.random())
@@ -60,15 +59,8 @@ const AddPost = ({ user, posts, setPosts }) => {
 };
 
 AddPost.propTypes = {
-  user: PropTypes.shape({
-    name: PropTypes.string,
-    username: PropTypes.string
-  }),
   posts: PropTypes.arrayOf(PropTypes.shape({
-    author: PropTypes.shape({
-      name: PropTypes.string,
-      username: PropTypes.string
-    }),
+    username: PropTypes.string,
     content: PropTypes.string,
     time: PropTypes.number
   })),
