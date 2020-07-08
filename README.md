@@ -5,7 +5,7 @@
 ## Technologies stack
 
 [React.js](https://reactjs.org/)  
-[Firebase](https://firebase.google.com/docs/reference/rest/database)
+[Firebase](https://firebase.google.com/docs/reference/rest/database)  
 [React Router](https://github.com/ReactTraining/react-router#readme)
 
 ## Available scripts
